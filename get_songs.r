@@ -3,10 +3,6 @@ library(jsonlite)
 library(tidyverse)
 library(lubridate)
 
-
-
-
-
 download <- function(from, to){
   base <- "https://music.abcradio.net.au/api/v1/plays/search.json?limit=100&offset=0&page=0&station=triplej&from="
   from_char <- format(from, "%Y-%m-%dT%H:%M:%S.000Z")
@@ -51,9 +47,5 @@ get_songs <- function(start, end, progress = FALSE) {
   return(songs)
 }
 
-
-
-songs <- get_songs(ymd_hms("2020-12-31 13:00:01 UTC"),
-                   ymd_hms("2021-12-31 12:59:59 UTC"))
 
 
